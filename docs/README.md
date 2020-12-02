@@ -36,6 +36,10 @@ on initialize:
 |`<optional item>` |
 
 
+### Math
+"3 + 3 = 6"
+"[numbers]<space>[operator]<space>[numbers]<=><answer>"
+
 ### Asking Questions
 "how are you?"
 
@@ -55,9 +59,8 @@ alan <~ actor
 |"Do I have a favorite color?"| actor |lookup | subject.lookup([favorite color])|
 
 
-### actor
+Proposed Tools:
 
-### Math
-"3 + 3 = 6"
-"[numbers]<space>[operator]<space>[numbers]<=><answer>"
+Golang 
+GraphQL
 
