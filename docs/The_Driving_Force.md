@@ -53,14 +53,14 @@ alan <~ actor
 |Question|Subject|Action|Result|
 | :--- |:--- |:--- |:--- |
 |"what is your name?"|"[yY]ou" \|\| "[yY]our"  == self|lookup|subject.name|
-|"what is my name?"|"[mMy] \|\| [iI] == actor |lookup| subject.name|
-|"what is your favorite color?"| self| lookup | subject.lookup([favorite color])|
-|"what is my favorite color?"| actor |lookup  | subject.lookup([favorite color])|
-|"Do I have a favorite color?"| actor |lookup | subject.lookup([favorite color])|
+|"what is my name?"|"[mM]y \|\| [iI] == actor |lookup| subject.name|
+|"what is your favorite color?"| self | lookup | subject.lookup([favorite color])|
+|"what is my favorite color?"| actor | lookup  | subject.lookup([favorite color])|
+|"Do I have a favorite color?"| actor | lookup | subject.lookup([favorite color])|
 
 
 Proposed Tools:
 
-Golang 
+Golang
 GraphQL
 
