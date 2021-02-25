@@ -1,3 +1,3 @@
-module alan
+module alp
 
 go 1.15
