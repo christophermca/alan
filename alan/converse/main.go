@@ -9,38 +9,28 @@ import (
 var user User
 
 func handleResponse() {
-	var context string
+	// var context string
+	// switch sentence.Subject {
+	// case "actor":
+	// 	context = "you're"
+	// case "us":
+	// 	context = "we're"
+	// case "them":
+	// 	context = "they're"
+	// }
+	// res := fmt.Sprintf("im glad %s %q\n", context, user.status)
 
-	switch sentence.Subject {
-	case "actor":
-		context = "you're"
-	case "us":
-		context = "we're"
-	case "them":
-		context = "they're"
-	}
-
-	res := fmt.Sprintf("im glad %s %q\n", context, user.status)
-	fmt.Printf("<Alan>: %s\n", res)
+	res := fmt.Sprintf("Hello %s %s", user.firstName, user.lastName)
+	fmt.Printf("\n<Alan>: %s\n", res)
 }
 
-func request(question string) {
+func request(question string) []string {
 	scanner := bufio.NewScanner(os.Stdin)
-
-	fmt.Println("<Alan>: " + question)
-
+	var words []string
 	if scanner.Scan() {
-		s := scanner.Text()
-		/*
-			* TODO determine addtional data from sentenceStructure
-				- verb
-				- object [optional]
-			*
-		*/
-		SentenceStructure(s)
-		handleResponse()
-
+		words = SentenceStructure(scanner.Text())
 	}
+	return words
 }
 
 // Public API
@@ -48,8 +38,14 @@ func Greeting(name string) {
 	fmt.Printf("Hello my name is %s.\n\n", name)
 }
 
-func AskQ(question string) {
-	request(question)
-}
+func AskQuestion(question string, key string) {
+	words := request(question)
+	if len(words) == 1 {
+		user = User{"chris"}
+	}
+	// else if len(words) > 1 {
+	// 	user.lastName = words[1]
+	// }
 
-//func Respond(answer string) {}
+	handleResponse()
+}

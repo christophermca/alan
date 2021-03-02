@@ -11,7 +11,11 @@ type Self struct {
 func Run() {
 	al := Self{name: "Alan"}
 	converse.Greeting(al.name)
-	converse.AskQ("How are you?")
+	// To requesting status
+	// converse.AskQuestion("How are you?")
+
+	//To request name
+	converse.AskQuestion("what is your name?", "firstName")
 }
 
 func Shutdown() {

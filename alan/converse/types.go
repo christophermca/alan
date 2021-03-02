@@ -4,6 +4,7 @@ type CompileSubject struct {
 	regexp  string
 	subject string
 }
+
 type User struct {
 	firstName string
 	lastName  string

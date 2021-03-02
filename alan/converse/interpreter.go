@@ -1,7 +1,6 @@
 package converse
 
 import (
-	"fmt"
 	"log"
 	"regexp"
 	"strings"
@@ -22,29 +21,24 @@ func determineSubject(response string) {
 
 		if len(search.FindString(response)) > 0 {
 			sentence.Subject = list[i].subject
-			log.Printf("subject: %#v\n", sentence.Subject)
 		}
 	}
 
 	if len(sentence.Subject) == 0 {
 		sentence.Subject = "actor"
-
 	}
+
+	log.Printf(":::__ %s __:::", sentence.Subject)
 }
 
-func SentenceStructure(response string) {
-	var words []string
+func SentenceStructure(response string) []string {
+	/*
+		* TODO determine addtional data from sentenceStructure
+			- verb
+			- object [optional]
+		*
+	*/
 	determineSubject(response)
 
-	// DEBUGGING below
-	words = strings.Fields(response)
-	fmt.Print(":::__" + sentence.Subject + "__:::")
-
-	if len(sentence.Subject) > 0 {
-		if len(words) > 1 {
-			user.status = words[1]
-		} else {
-			user.status = words[0]
-		}
-	}
+	return strings.Fields(response)
 }
