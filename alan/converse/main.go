@@ -38,10 +38,14 @@ func Greeting(name string) {
 	fmt.Printf("Hello my name is %s.\n\n", name)
 }
 
-func AskQuestion(question string, key string) {
+func AskQuestion(question string) {
+	fmt.Println("<Alan>: " + question)
+
 	words := request(question)
+	u := &user
+	fmt.Print("from AskQuestion -> ", &u)
 	if len(words) == 1 {
-		user = User{"chris"}
+		u.firstName = words[0]
 	}
 	// else if len(words) > 1 {
 	// 	user.lastName = words[1]

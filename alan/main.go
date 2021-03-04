@@ -9,13 +9,14 @@ type Self struct {
 }
 
 func Run() {
-	al := Self{name: "Alan"}
+	al := &Self{name: "Alan"}
+
 	converse.Greeting(al.name)
 	// To requesting status
 	// converse.AskQuestion("How are you?")
 
 	//To request name
-	converse.AskQuestion("what is your name?", "firstName")
+	converse.AskQuestion("what is your name?")
 }
 
 func Shutdown() {
