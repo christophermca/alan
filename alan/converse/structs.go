@@ -1,15 +1,12 @@
 package converse
 
+type Alan struct {
+	name string
+}
+
 type CompileSubject struct {
 	regexp  string
 	subject string
-}
-
-type User struct {
-	firstName string
-	lastName  string
-	status    string
-	age       int
 }
 
 type Sentence struct {

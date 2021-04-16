@@ -1,12 +1,26 @@
 package converse
 
 import (
+	"fmt"
 	"log"
 	"regexp"
 	"strings"
 )
 
 var sentence Sentence
+
+func determineVerb(response string) {
+	list := [2]string{`\w+e d`, `\w+ing`} //{past, present}
+
+	var c string
+	for i := 0; i < len(list); i++ {
+		search := regexp.MustCompile(list[i])
+		c = search.FindString(response)
+
+		fmt.Println(search, c)
+	}
+
+}
 
 func determineSubject(response string) {
 	var list [5]CompileSubject
@@ -38,7 +52,9 @@ func SentenceStructure(response string) []string {
 			- object [optional]
 		*
 	*/
-	determineSubject(response)
+	words := strings.Fields(response)
+	go determineSubject(response)
+	determineVerb(response)
 
-	return strings.Fields(response)
+	return words
 }

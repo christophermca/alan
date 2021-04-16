@@ -2,23 +2,21 @@ package alan
 
 import (
 	"alp/alan/converse"
+	"fmt"
+	"time"
 )
 
-type Self struct {
-	name string
-}
-
 func Run() {
-	al := &Self{name: "Alan"}
-
-	converse.Greeting(al.name)
-	// To requesting status
-	// converse.AskQuestion("How are you?")
-
+	var keys []string
 	//To request name
-	converse.AskQuestion("what is your name?")
-}
+	keys = []string{"firstName", "lastName"}
+	converse.AskQuestion("what is your name?", keys)
 
-func Shutdown() {
-	// Shutdown contexts, listeners, and such
+	// To requesting status
+	keys = []string{"status"}
+	converse.AskQuestion("How are you?", keys)
+
+	//keep alive hack
+	time.Sleep(time.Second)
+	fmt.Println("done")
 }
