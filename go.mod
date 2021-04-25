@@ -2,4 +2,7 @@ module alp
 
 go 1.15
 
-require github.com/go-delve/delve v1.6.0 // indirect
+require (
+	github.com/99designs/gqlgen v0.13.0
+	github.com/vektah/gqlparser/v2 v2.1.0
+)

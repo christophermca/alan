@@ -4,58 +4,18 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"path/filepath"
 )
 
 var user map[string]string
 
-func fileExist(filename string) bool {
-	info, err := os.Stat(filename)
-	if os.IsNotExist(err) {
-		return false
-	}
-
-	return !info.IsDir()
-}
-
-func determineUser(userData map[string]string) {
-	/**
-	* TODO build
-	* - lookup datafile if userObject exists
-	* - TODO pattern for saved file names
-	*  - do this a cleaner way.
-	 */
-	filename, _ := filepath.Abs("alan/converse/users")
-	filename += "/" + userData["firstName"]
-
-	if len(userData["lastname"]) > 0 {
-		filename += filename + "." + userData["lastname"]
-	}
-
-	filename += ".json"
-
-	if fileExist(filename) {
-		//TODO load data set to channel
-	} else {
-		fmt.Printf("%s was not found\n", filename)
-	}
-
-}
+/*
+ * TODO build
+ * - lookup datafile if userObject exists
+ * - TODO pattern for saved file names
+ *  - do this a cleaner way.
+ **/
 
 func handleResponse() {
-	// var context string
-	// switch sentence.Subject {
-	// case "actor":
-	// 	context = "you're"
-	// case "us":
-	// 	context = "we're"
-	// case "them":
-	// 	context = "they're"
-	// }
-	// res := fmt.Sprintf("Hello %s %s", user["firstName"], user["lastName"])
-
-	// res = fmt.Sprintf("im glad %s %s \n", context, user["status"])
-	//fmt.Printf("\n<Alan>: %s\n", res)
 	fmt.Printf("\n<Alan>: %s\n", user)
 }
 
@@ -95,6 +55,8 @@ func AskQuestion(question string, keys []string) {
 		if keys[1] == "lastname" {
 			user[keys[1]] = words[1]
 		}
-		determineUser(user)
+
+		// NOTE possibly abstract to a new location.
+		go GetUser(user["firstName"], user["lastName"])
 	}
 }
