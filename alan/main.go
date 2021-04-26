@@ -1,8 +1,9 @@
 package alan
 
 import (
-	"alp/alan/converse"
 	"fmt"
+	converse "github.com/christophermca/alan-go/alan/converse"
+	userService "github.com/christophermca/alan-go/alan/users"
 	"time"
 )
 
@@ -10,7 +11,8 @@ func Run() {
 	var keys []string
 	//To request name
 	keys = []string{"firstName", "lastName"}
-	converse.AskQuestion("what is your name?", keys)
+	user := converse.AskQuestion("what is your name?", keys)
+	go userService.GetUser(user["firstName"], user["lastName"])
 
 	// To requesting status
 	keys = []string{"status"}

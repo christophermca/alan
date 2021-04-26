@@ -1,7 +1,7 @@
 package main
 
 import (
-	"alp/alan"
+	"github.com/christophermca/alan-go/alan"
 )
 
 func main() {
