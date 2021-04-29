@@ -9,6 +9,10 @@ type CompileSubject struct {
 	subject string
 }
 
+type User struct {
+	firstname, lastname, status string
+}
+
 type Sentence struct {
 	Subject string `json:"subject"`
 	Verb    string `json:"verb"`

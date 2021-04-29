@@ -7,8 +7,9 @@ import (
 	"path/filepath"
 )
 
-// Create user file firstname.lastname.N.json
-func CreateUser(name string) {}
+/** TODO CreateUser
+*  lookup from file {firstname}.{lastname}.{N}.json
+ */
 
 func GetUser(firstName string, lastName string) {
 	filename, _ := filepath.Abs("alan/users/data")
