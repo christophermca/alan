@@ -1,4 +1,4 @@
-module github.com/christophermca/alan-go
+module github.com/christophermca/alan
 
 go 1.15
 

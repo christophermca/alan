@@ -1,13 +1,13 @@
 package alan
 
 import (
+	"alan/converse"
+	"alan/users"
 	"fmt"
-	converse "github.com/christophermca/alan-go/alan/converse"
-	userService "github.com/christophermca/alan-go/alan/users"
 	"time"
 )
 
-func Run() {
+func main() {
 	var keys []string
 	//To request name
 	keys = []string{"firstName", "lastName"}
