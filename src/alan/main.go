@@ -1,9 +1,9 @@
 package alan
 
 import (
-	"alan/converse"
-	"alan/users"
 	"fmt"
+	"github.com/christophermca/alan-go/alan/converse"
+	userService "github.com/christophermca/alan-go/alan/users"
 	"time"
 )
 
