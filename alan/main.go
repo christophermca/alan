@@ -1,4 +1,4 @@
-package alan
+package main
 
 import (
 	"fmt"

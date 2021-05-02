@@ -1,7 +1,20 @@
 ## Alan Project
 
-#### Run project
+**Dependency**
+```sh
+$PATH=$PATH:$GOPATH/bin
+````
 
-`go run main.go`
+### install project
 
+```sh
+$ cd alan
+$ go install
+```
+
+### run
+
+```sh
+$ alan
+```
 
