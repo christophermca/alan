@@ -38,7 +38,7 @@ func init() {
 	actor = make(map[string]string)
 }
 
-// Public API
+// AskQuestion (question string, keys []string)
 func AskQuestion(question string, keys []string) map[string]string {
 	fmt.Println("<Alan>: " + question)
 	words := request(question)

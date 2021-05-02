@@ -19,7 +19,6 @@ func determineVerb(response string) {
 
 		fmt.Println(search, c)
 	}
-
 }
 
 func determineSubject(response string) {
@@ -45,6 +44,7 @@ func determineSubject(response string) {
 	log.Printf(":::__ %s __:::", sentence.Subject)
 }
 
+// SentenceStructure string
 func SentenceStructure(response string) []string {
 	/*
 		* TODO determine addtional data from sentenceStructure

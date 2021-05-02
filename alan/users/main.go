@@ -1,24 +1,24 @@
 package users
 
 import (
-	_ "encoding/json"
 	"fmt"
 	"io/ioutil"
-	"path/filepath"
 )
 
 /** TODO CreateUser
 *  lookup from file {firstname}.{lastname}.{N}.json
  */
 
+// GetUser ...
 func GetUser(firstName string, lastName string) {
-	filename, _ := filepath.Abs("alan/users/data")
-	filename += "/" + firstName
+	//TODO get user/data/ location
+	filename := "data"
 
+	// get file firstName.lastname
+	filename += "/" + firstName
 	if len(lastName) > 0 {
 		filename += filename + "." + lastName
 	}
-
 	filename += ".json"
 
 	//TODO open channel for quick file access
@@ -27,7 +27,5 @@ func GetUser(firstName string, lastName string) {
 	if err != nil {
 		fmt.Println(err.Error())
 	}
-
-	//json.Unmarshal(content, &user)
 
 }
