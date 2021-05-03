@@ -12,6 +12,9 @@ $ cd alan
 $ go install
 ```
 
+### data location
+~/alan-data/
+
 ### run
 
 ```sh

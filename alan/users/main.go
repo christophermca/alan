@@ -1,31 +1,29 @@
 package users
 
 import (
+	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"github.com/christophermca/alan-go/alan/util"
 )
 
 /** TODO CreateUser
 *  lookup from file {firstname}.{lastname}.{N}.json
  */
 
-// GetUser ...
+// user Struct
+type user struct {
+	FirstName string `json:"firstname"`
+	LastName  string `json:"lastname"`
+	Status    string `json:"status"`
+}
+
+// GetUser return user data from file
 func GetUser(firstName string, lastName string) {
-	//TODO get user/data/ location
-	filename := "data"
-
-	// get file firstName.lastname
-	filename += "/" + firstName
-	if len(lastName) > 0 {
-		filename += filename + "." + lastName
-	}
-	filename += ".json"
-
-	//TODO open channel for quick file access
-	_, err := ioutil.ReadFile(filename)
-
+	var data user
+	rawInput := util.GetFile(firstName)
+	err := json.Unmarshal(rawInput, &data)
 	if err != nil {
-		fmt.Println(err.Error())
+		fmt.Println(err)
+		return
 	}
-
 }

@@ -11,11 +11,6 @@ type CompileSubject struct {
 	subject string
 }
 
-// User has (firstname, lastname, status)
-type User struct {
-	firstname, lastname, status string
-}
-
 // Sentence ...
 type Sentence struct {
 	Subject string `json:"subject"`
