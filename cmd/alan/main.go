@@ -1,13 +1,12 @@
-package main
+package alan
 
 import (
-	"fmt"
-	"github.com/christophermca/alan-go/alan/converse"
-	userService "github.com/christophermca/alan-go/alan/users"
-	"time"
+	"github.com/christophermca/alan-go/pkg/converse"
+	userService "github.com/christophermca/alan-go/pkg/users"
+	"log"
 )
 
-func main() {
+func Run() {
 	var keys []string
 	//To request name
 	keys = []string{"firstName", "lastName"}
@@ -18,7 +17,5 @@ func main() {
 	keys = []string{"status"}
 	converse.AskQuestion("How are you?", keys)
 
-	//keep alive hack
-	time.Sleep(time.Second)
-	fmt.Println("done")
+	log.Println("done")
 }

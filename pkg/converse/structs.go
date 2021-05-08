@@ -1,5 +1,12 @@
 package converse
 
+// User Struct
+type User struct {
+	FirstName string `json:"firstname"`
+	LastName  string `json:"lastname"`
+	Status    string `json:"status"`
+}
+
 // Alan has (name)
 type Alan struct {
 	name string
