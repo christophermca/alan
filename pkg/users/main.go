@@ -28,5 +28,5 @@ func GetUser(firstName string, lastName string) {
 		name = firstName
 	}
 	rawInput := util.GetFile(name)
-	fmt.Println(rawInput)
+	fmt.Printf("rawinput: %s\n", rawInput)
 }

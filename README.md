@@ -11,6 +11,13 @@ $PATH=$PATH:$GOPATH/bin
 $ cd alan
 $ go install
 ```
+### build
+```sh
+# go build -a will force update package
+# go build -o sets output path
+
+go build -o ~/go/bin
+```
 
 ### data location
 ~/alan-data/
