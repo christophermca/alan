@@ -19,7 +19,7 @@ func init() {
 }
 
 // GetUser return user data from file
-func GetUser(firstName string, lastName string) {
+func GetUser(ch chan []byte, firstName string, lastName string) {
 	// get jsonfile or create it
 	var name string
 	if len(lastName) > 0 {
@@ -27,6 +27,7 @@ func GetUser(firstName string, lastName string) {
 	} else {
 		name = firstName
 	}
-	rawInput := util.GetFile(name)
-	fmt.Printf("rawinput: %s\n", rawInput)
+	ch <- util.GetFile(name)
+	close(ch)
+
 }

@@ -11,7 +11,10 @@ func Run() {
 	//To request name
 	keys = []string{"firstName", "lastName"}
 	user := converse.AskQuestion("what is your name?", keys)
-	go userService.GetUser(user["firstName"], user["lastName"])
+	userDTO := make(chan []byte)
+	go userService.GetUser(userDTO, user["firstName"], user["lastName"])
+	v := <-userDTO
+	log.Print(string(v))
 
 	// To requesting status
 	keys = []string{"status"}
